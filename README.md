@@ -3,8 +3,8 @@ This is library that can be used for options pricing using various methods, cont
 
 # Roadmap as of 9 Jan 2022.
 
--- Define instruments that can be priced.
--- Pricing Engine
--- Portfolio
--- Portfolio Risks
--- Volatility Models
+> Define instruments that can be priced.
+> Pricing Engine
+> Portfolio
+> Portfolio Risks
+> Volatility Models
