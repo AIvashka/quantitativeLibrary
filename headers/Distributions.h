@@ -12,20 +12,21 @@
 namespace Distributions {
 
     template <size_t sampleSize>
-    std::vector<int> poisson(double lambda = 1) {
-        std::random_device rd;  // Will be used to obtain a seed for the random number engine
-        std::mt19937 gen(rd()); // Standarstad mersenne_twister_engine seeded with rd()
+    std::vector<int> poisson(int lambda = 1) {
+        std::random_device rd;
+        std::mt19937 gen(rd());
         std::poisson_distribution<> poisson(lambda);
         std::vector<int> poissonSample(sampleSize);
         for(int i = 0; i < sampleSize; ++i) {
             poissonSample.emplace_back(poisson(gen));
         }
+        return poissonSample;
     }
 
     template <size_t sampleSize>
     std::vector<double> exponential(double lambda = 1) {
-        std::random_device rd;  // Will be used to obtain a seed for the random number engine
-        std::mt19937 gen(rd()); // Standarstad mersenne_twister_engine seeded with rd()
+        std::random_device rd;
+        std::mt19937 gen(rd());
         std::uniform_real_distribution<> dis(0.0, 1.0);
         double value;
         double lambdaReciprocal = -1 / lambda;
