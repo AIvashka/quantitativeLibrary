@@ -13,5 +13,5 @@ include_directories(${GTest_INCLUDE_DIRS})
 
 
 
-add_executable(${PROJECT_NAME} main.cpp headers/OptionBase.hpp headers/Distributions.h headers/MonteCarloPricingEngine.h)
+add_executable(${PROJECT_NAME} main.cpp headers/OptionBase.hpp headers/Distributions.h headers/MonteCarloPricingEngine.h headers/BrownianMotion.h)
 target_link_libraries(${PROJECT_NAME} GTest::gtest_main)
