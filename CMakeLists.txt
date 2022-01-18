@@ -11,7 +11,8 @@ include_directories(${Boost_INCLUDE_DIRS})
 find_package(GTest REQUIRED)
 include_directories(${GTest_INCLUDE_DIRS})
 
+file(GLOB INCLUDE_DIRS include)
 
-
-add_executable(${PROJECT_NAME} main.cpp headers/OptionBase.hpp headers/Distributions.h headers/MonteCarloPricingEngine.h)
+add_executable(${PROJECT_NAME} main.cpp build/distributions.cpp)
+target_include_directories(${PROJECT_NAME} PUBLIC ${INCLUDE_DIRS})
 target_link_libraries(${PROJECT_NAME} GTest::gtest_main)
