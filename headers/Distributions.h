@@ -16,7 +16,7 @@ namespace Distributions {
         std::random_device rd;
         std::mt19937 gen(rd());
         std::poisson_distribution<> poisson(lambda);
-        std::vector<int> poissonSample(sampleSize);
+        std::vector<int> poissonSample;
         for(int i = 0; i < sampleSize; ++i) {
             poissonSample.emplace_back(poisson(gen));
         }
@@ -30,7 +30,7 @@ namespace Distributions {
         std::uniform_real_distribution<> uniform(0.0, 1.0);
         double value;
         double lambdaReciprocal = -1 / lambda;
-        std::vector<double> exponentialSample(sampleSize);
+        std::vector<double> exponentialSample;
         for(int i = 0; i < sampleSize; ++i) {
             value = uniform(gen);
             exponentialSample.emplace_back(lambdaReciprocal * log(1 - value));
@@ -43,7 +43,7 @@ namespace Distributions {
         std::random_device rd;
         std::mt19937 gen(rd());
         std::normal_distribution<double> norm(mean, std);
-        std::vector<double> normalSample(sampleSize);
+        std::vector<double> normalSample;
         for(int i = 0; i < sampleSize; ++i) {
             normalSample.emplace_back(norm(gen));
         }

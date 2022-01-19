@@ -15,6 +15,13 @@ public:
 
     BrownianMotion() : riskFreeRate(0), dividendYield(0), sigma(0), time(0), initialPrice(0) {};
 
+    BrownianMotion(double riskFreeRate, double dividendYield, double sigma, double time, double initialPrice) :
+                    riskFreeRate(riskFreeRate),
+                    dividendYield(dividendYield),
+                    sigma(sigma),
+                    time(time),
+                    initialPrice(initialPrice) {};
+
     std::vector<std::vector<double>> generatePaths() const {
         std::vector<std::vector<double>> paths(numberOfPaths);
         for(auto &path : paths) {
@@ -50,7 +57,7 @@ private:
     double initialPrice;
 
     static constexpr size_t sampleSize = 100;
-    size_t numberOfPaths = 1;
+    size_t numberOfPaths = 10;
 
 
 };
